@@ -1,4 +1,4 @@
-# Smart-Vehicle-License-Plate-Recognition-System
+# Smart Vehicle License Plate Recognition System
 ### Proje Hakkında
 Bu proje, kampüs, site veya özel otopark girişlerinde kullanılabilecek otomatik bir güvenlik sistemi prototipidir. Sistemin temel amacı, güvenlik kameralarından alınan görüntülerdeki araçları analiz ederek; araç tipine (otomobil, tır, otobüs) ve plaka yetkisine göre kapının açılıp açılmayacağına karar vermektir.
 Bu projede sadece plaka okuma değil, aynı zamanda aracın görsel analizi (tip tespiti ve betimlemesi) de yapılarak çok katmanlı bir güvenlik mekanizması oluşturulmuştur.
