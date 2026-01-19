@@ -11,7 +11,7 @@ Ultralytics YOLOv8'i görüntüdeki nesneleri tespit etmek için kullandım. Bu 
 
 EasyOCR'ı görüntü üzerindeki metinlerin konumunu (koordinatlarını) bulmak için kullandım.
 
-HuggingFace TrOCR(Transformer OCR)'ı kullandım.EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden Microsoft'un TrOCR modelini entegre ettim. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
+EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden HuggingFace TrOCR(Transformer OCR)'ı da kullandım. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
 
 BLIP'i projeye ekstra bir özellik olarak ekledim. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
 
