@@ -13,7 +13,7 @@ EasyOCR'ı görüntü üzerindeki metinlerin konumunu (koordinatlarını) bulmak
 
 EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden HuggingFace TrOCR(Transformer OCR)'ı da kullandım. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
 
-BLIP'i projeye ekstra bir özellik olarak ekledim. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
+BLIP'i görsel betimleme için kullandım. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
 
 OpenCV(cv2)'yi görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana o yeşil/kırmızı kutuları çizdirmek için kullandım.
 
