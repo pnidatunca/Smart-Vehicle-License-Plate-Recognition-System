@@ -29,7 +29,7 @@ YOLO modeli ile aracın koordinatlarını bulduktan sonra, sadece o bölgeyi kes
 <img width="613" height="772" alt="image" src="https://github.com/user-attachments/assets/3a88a6eb-9385-453a-805a-3346fae31288" />
 <img width="593" height="193" alt="image" src="https://github.com/user-attachments/assets/b9a5254d-c491-4b38-93cc-60288277c940" />
 
-Sistemin en önemli kısmı burasıdır. Okunan plaka ve tespit edilen araç tipi bir mantık süzgecinden geçer. Burada iç içe if-else yapıları kullanarak bir hiyerarşi kurdum.(Uzun olduğu için sadece bir kısmını paylaştım)
+Sistemin en önemli kısmı burasıdır. Okunan plaka ve tespit edilen araç tipi bir mantık süzgecinden geçer. Burada iç içe if-else yapıları kullanarak bir hiyerarşi kurdum.
 
 <img width="836" height="797" alt="image" src="https://github.com/user-attachments/assets/6c3777b3-202a-490c-ba49-a0323acf05c2" />
 
