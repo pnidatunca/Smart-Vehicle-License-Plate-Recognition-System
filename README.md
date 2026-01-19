@@ -20,6 +20,8 @@ OpenCV(cv2)'yi görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü tem
 ### Kodun Çalışma Mantığı ve Önemli Kısımlar
 Kamera görüntüleri her zaman net olmayabilir. Bu yüzden plakayı okumadan önce görüntüyü netleştiren bir preprocess fonksiyonu ve okunan hatalı harfleri (Örneğin 'O' harfini '0' rakamına çeviren) düzelten bir smart_fix fonksiyonu yazdım.
 
+<img width="905" height="265" alt="image" src="https://github.com/user-attachments/assets/83341172-62fb-42d9-b128-251a26b8fc57" />
+
 <img width="801" height="582" alt="image" src="https://github.com/user-attachments/assets/fe963516-ba58-40de-ba5a-a807d542faa2" />
 
 YOLO modeli ile aracın koordinatlarını bulduktan sonra, sadece o bölgeyi kesip (crop) OCR motoruna gönderdim. Bu işlem sistemin tüm resme bakarak vakit kaybetmesini engelledi.
