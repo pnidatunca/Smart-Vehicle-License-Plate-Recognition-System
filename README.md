@@ -1,18 +1,21 @@
 # Smart Vehicle License Plate Recognition System
 ### Proje Hakkında
-Bu proje, kampüs, site veya özel otopark girişlerinde kullanılabilecek otomatik bir güvenlik sistemi prototipidir. Sistemin temel amacı, güvenlik kameralarından alınan görüntülerdeki araçları analiz ederek; araç tipine (otomobil, tır, otobüs) ve plaka yetkisine göre kapının açılıp açılmayacağına karar vermektir.
-Bu projede sadece plaka okuma değil, aynı zamanda aracın görsel analizi (tip tespiti ve betimlemesi) de yapılarak çok katmanlı bir güvenlik mekanizması oluşturulmuştur.
-
+Bu proje, görüntü işleme teknikleri ve derin öğrenme modellerini birleştirerek çalışan bir güvenlik sistemi simülasyonudur. Projenin temel amacı, kamera görüntüsünden gelen araçları analiz etmek, plakalarını okumak ve belirli kurallara göre (abone mi, yasaklı araç tipi mi) geçiş izni verip vermeyeceğine karar vermektir.Projede hazır kütüphanelerin yanı sıra, hatalı okumaları düzeltmek için kendi geliştirdiğim algoritmaları da kullandım.
 ### Kullanılan Teknolojiler ve Yöntemler
 Proje Python dili kullanılarak Google Colab ortamında geliştirilmiştir. Aşağıdaki temel kütüphane ve modeller kullanılmıştır:
-* **YOLOv8 (Ultralytics):** Görüntüdeki araçların tespiti ve sınıflandırılması (Araba, Tır, Otobüs vb.) için kullanıldı.
-* **EasyOCR:** Plakanın görüntü üzerindeki konumunu tespit etmek için kullanıldı.
-* **TrOCR (Transformer OCR):** Tespit edilen plaka bölgesindeki karakterlerin optik karakter tanıma (OCR) işlemi için Microsoft'un transformer tabanlı modeli tercih edildi.
-* **BLIP (Bootstrapping Language-Image Pre-training):** Aracın rengi ve görsel özellikleri hakkında yapay zeka tabanlı yorum almak için kullanıldı.
-* **OpenCV:** Görüntü işleme, filtreleme (CLAHE) ve çizim işlemleri için kullanıldı.
 
-### Sistemin Çalışma Mantığı
-Sistem sırasıyla şu adımları izler:
+Ultralytics YOLOv8'i Görüntüdeki nesneleri tespit etmek için kullandım. Bu model sadece "orada bir araç var" demez, aynı zamanda aracın türünü (Araba, Kamyon, Otobüs) de ayırt eder. Bu sayede kamyonların girmesini yasaklayan bir kural yazabildim.
+
+EasyOCR'ı Görüntü üzerindeki metinlerin konumunu (koordinatlarını) bulmak için kullandım.
+
+HuggingFace TrOCR(Transformer OCR)'ı EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden Microsoft'un TrOCR modelini entegre ettim. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
+
+BLIP'i Projeye ekstra bir özellik olarak ekledim. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
+
+OpenCV(cv2)'yi Görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana o yeşil/kırmızı kutuları çizdirmek için kullandım.
+
+### Kodun Çalışma Mantığı ve Önemli Kısımlar
+Kamera görüntüleri her zaman net olmayabilir. Bu yüzden plakayı okumadan önce görüntüyü netleştiren bir preprocess fonksiyonu ve okunan hatalı harfleri (Örneğin 'O' harfini '0' rakamına çeviren) düzelten bir smart_fix fonksiyonu yazdım.
 1. **Görüntü Alma:** Test klasöründen alınan görüntü işlenir.
 2. **Nesne Tespiti:** YOLO modeli ile araçlar bulunur ve koordinatları çıkarılır.
 3. **Plaka Konumlandırma ve Okuma:** Aracın ön/arka bölgesine odaklanılarak plaka bölgesi kesilir. EasyOCR ve TrOCR hibrit bir yapıda çalıştırılarak plaka metni elde edilir. Hatalı okumaları önlemek için Regex (Düzenli İfadeler) ile format kontrolü yapılır.
