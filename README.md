@@ -33,6 +33,12 @@ Sistemin en önemli kısmı burasıdır. Okunan plaka ve tespit edilen araç tip
 
 <img width="836" height="797" alt="image" src="https://github.com/user-attachments/assets/6c3777b3-202a-490c-ba49-a0323acf05c2" />
 
+<img width="712" height="792" alt="image" src="https://github.com/user-attachments/assets/da100e4d-b247-46ab-b5e2-751bbf866855" />
+
+<img width="962" height="710" alt="image" src="https://github.com/user-attachments/assets/4eb30898-601c-42d4-a79d-439e9dbf6957" />
+
+
+
 Mantık şu sırayla işler:
 
 Abone Kontrolü: Eğer plaka abone_listesi.json dosyasında varsa, araç tır bile olsa kapı açılır (Yeşil).
