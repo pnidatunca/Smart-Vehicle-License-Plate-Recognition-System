@@ -7,15 +7,15 @@ Bu proje, görüntü işleme teknikleri ve derin öğrenme modellerini birleşti
 ### Kullanılan Teknolojiler ve Yöntemler
 Proje Python dili kullanılarak Google Colab ortamında geliştirilmiştir. Aşağıdaki temel kütüphane ve modeller kullanılmıştır:
 
-Ultralytics YOLOv8'i Görüntüdeki nesneleri tespit etmek için kullandım. Bu model sadece "orada bir araç var" demez, aynı zamanda aracın türünü (Araba, Kamyon, Otobüs) de ayırt eder. Bu sayede kamyonların girmesini yasaklayan bir kural yazabildim.
+Ultralytics YOLOv8'i görüntüdeki nesneleri tespit etmek için kullandım. Bu model sadece "orada bir araç var" demez, aynı zamanda aracın türünü (Araba, Kamyon, Otobüs) de ayırt eder. Bu sayede kamyonların girmesini yasaklayan bir kural yazabildim.
 
-EasyOCR'ı Görüntü üzerindeki metinlerin konumunu (koordinatlarını) bulmak için kullandım.
+EasyOCR'ı görüntü üzerindeki metinlerin konumunu (koordinatlarını) bulmak için kullandım.
 
-HuggingFace TrOCR(Transformer OCR)'ı EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden Microsoft'un TrOCR modelini entegre ettim. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
+HuggingFace TrOCR(Transformer OCR)'ı kullandım.EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden Microsoft'un TrOCR modelini entegre ettim. Özellikle el yazısına benzer veya bozuk fontlu plakalarda daha iyi sonuç veriyor.
 
-BLIP'i Projeye ekstra bir özellik olarak ekledim. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
+BLIP'i projeye ekstra bir özellik olarak ekledim. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
 
-OpenCV(cv2)'yi Görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana o yeşil/kırmızı kutuları çizdirmek için kullandım.
+OpenCV(cv2)'yi görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana o yeşil/kırmızı kutuları çizdirmek için kullandım.
 
 ### Kodun Çalışma Mantığı ve Önemli Kısımlar
 Kamera görüntüleri her zaman net olmayabilir. Bu yüzden plakayı okumadan önce görüntüyü netleştiren bir preprocess fonksiyonu ve okunan hatalı harfleri (Örneğin 'O' harfini '0' rakamına çeviren) düzelten bir smart_fix fonksiyonu yazdım.
