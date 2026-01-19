@@ -15,7 +15,7 @@ EasyOCR bazen karakterleri karıştırabiliyordu. Bu yüzden HuggingFace TrOCR(T
 
 BLIP'i görsel betimleme için kullandım. Aracın rengini veya genel görünümünü metin olarak tarif ediyor (Örneğin: "Mavi bir spor araba").
 
-OpenCV(cv2)'yi görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana o yeşil/kırmızı kutuları çizdirmek için kullandım.
+OpenCV(cv2)'yi görüntüyü işlemek (siyah beyaza çevirmek, gürültüyü temizlemek) ve sonucunda ekrana (o yeşil/kırmızı kutuları) çizdirmek için kullandım.
 
 ### Kodun Çalışma Mantığı ve Önemli Kısımlar
 Kamera görüntüleri her zaman net olmayabilir. Bu yüzden plakayı okumadan önce görüntüyü netleştiren bir preprocess fonksiyonu ve okunan hatalı harfleri (Örneğin 'O' harfini '0' rakamına çeviren) düzelten bir smart_fix fonksiyonu yazdım.
